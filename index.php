@@ -47,7 +47,6 @@
             <?php foreach ($tasks as $task) : ?>
                 <li class="task-item">
                     <?php if(isset($_GET['edit']) && $_GET['edit'] == $task['id']): ?>
-                        <!-- Edit Form -->
                         <form method="POST" class="edit-form">
                             <input type="hidden" name="update_id" value="<?= $task['id'] ?>">
                             <input type="text" name="updated_task" value="<?= htmlspecialchars($task['task']) ?>">
@@ -55,7 +54,7 @@
                             <a href="?">Cancel</a>
                         </form>
                     <?php else: ?>
-                        <!-- Task Display -->
+
                         <span><?= htmlspecialchars($task['task']) ?></span>
                         <div class="task-actions">
                             <a href="?edit=<?= $task['id'] ?>">Edit</a>
