@@ -12,6 +12,16 @@
     <title>SimpleDo</title>
 </head>
 <body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <form id="task-form">
+            <label for="task">Task</label>
+            <input type="text" id="task" placeholder="Task here">
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="task-list">
 
+        </ul>
+    </div>
 </body>
 </html>
