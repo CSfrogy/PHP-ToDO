@@ -33,15 +33,20 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>SimpleDo</title>
 </head>
 <body>
+<main>
     <div class="container">
+        <div class="box">
         <h1>To-Do List</h1>
-        <form method="POST" action="">
-            <label for="task">Task</label>
-            <input type="text" name="task" id="task" placeholder="Task here" required>
-            <button type="submit">Add Task</button>
+        <form method="POST" action="" class="form">
+            <label class="custom-field one">
+                <input type="text" name="task" id="task" required>
+                <span class="placeholder">Write a task</span>
+                <button type="submit" class="add-btn">Add Task</button>
+            </label>
         </form>
         <ul id="task-list">
             <?php foreach ($tasks as $task) : ?>
@@ -55,18 +60,20 @@
                         </form>
                     <?php else: ?>
 
-                        <span><?= htmlspecialchars($task['task']) ?></span>
+                        <span class="new-task"><?= htmlspecialchars($task['task']) ?></span>
                         <div class="task-actions">
                             <a href="?edit=<?= $task['id'] ?>">Edit</a>
                             <form method="POST" style="display: inline;">
                                 <input type="hidden" name="delete_id" value="<?= $task['id'] ?>">
-                                <button type="submit">Delete</button>
+                                <button type="submit">Done</button>
                             </form>
                         </div>
                     <?php endif; ?>
                 </li>
             <?php endforeach; ?>
         </ul>
+       </div>
     </div>
+</main>
 </body>
 </html>
